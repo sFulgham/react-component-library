@@ -1,2 +1,2 @@
-# react-redux-todo
-todo application using react, redux and react router
+# React Library of Components
+Compononets created by Steven Fulgham

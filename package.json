@@ -1,0 +1,9 @@
+{
+  "name": "react-component-library",
+  "version": "0.1.0",
+  "description": "compononets created by Steven Fulgham",
+  "main": "index.js",
+  "repository": "https://github.com/sFulgham/react-component-library.git",
+  "author": "Steven Fulgham",
+  "license": "MIT"
+}
