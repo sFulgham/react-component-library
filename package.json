@@ -10,6 +10,7 @@
     "lint": "esw src --color",
     "unit-test": "jest --watch --color",
     "test-coverage": "jest --coverage",
+    "generate:docs": "node build/componentData.js",
     "build-css": "node-sass --include-path scss src/assets/scss/global.scss public/css/main.css",
     "start:dev": "NODE_ENV=development nodemon --exec babel-node build/server.js",
     "webpack": "webpack -wd",
@@ -22,6 +23,7 @@
     "@types/jest": "^22.0.0",
     "babel-eslint": "^8.1.2",
     "chalk": "^2.3.0",
+    "chokidar": "^2.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -34,12 +36,20 @@
     "jest": "^22.0.4",
     "node-sass": "^4.7.2",
     "nodemon": "^1.14.3",
+    "react-docgen": "^2.20.0",
     "react-test-renderer": "^16.2.0"
   },
   "babel": {
     "presets": [
       "react",
-      ["env", { "targets": { "node": "current" }}],
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
       "latest"
     ]
   },
@@ -56,6 +66,7 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
+    "highlight.js": "^9.12.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
