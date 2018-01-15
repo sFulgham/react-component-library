@@ -1,1 +1,1 @@
-module.exports = /* eslint-disable */ []
+module.exports = /* eslint-disable */ [{"name":"helloWorld","description":"","code":"import React, {PureComponent} from 'react';\n\nconst HelloWorld = (message) => {\n  return <div>Hello {message}</div>;\n};\n\nexport default HelloWorld;","examples":[]}]

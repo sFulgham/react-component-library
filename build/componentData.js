@@ -30,6 +30,7 @@ function generate(paths) {
     try {
       return getComponentData(paths, componentName);
     } catch(error) {
+      console.log(error);
       errors.push('An error occurred while attempting to generate metadata for ' + componentName + '. ' + error);
     }
   });
@@ -37,8 +38,11 @@ function generate(paths) {
 }
 
 function getComponentData(paths, componentName) {
+  console.log(componentName);
   var content = readFile(path.join(paths.components, componentName, componentName + '.js'));
+  
   var info = parse(content);
+  console.log(info);
   return {
     name: componentName,
     description: info.description,
