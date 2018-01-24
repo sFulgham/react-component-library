@@ -5,7 +5,6 @@ import DocsState from './api/docs/state/state';
 import {StaticRouter as Router, Route} from 'react-router-dom';
 import Docs from './docs/docs';
 
-
 const reactApp = async (req) => {
   const docsStore = new DocsState();
   const initialDocsState = {};

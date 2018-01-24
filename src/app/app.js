@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 class App extends PureComponent {
   constructor(props){
     super(props);
+    console.log('app log:', this.props);
   }
 
   render() {

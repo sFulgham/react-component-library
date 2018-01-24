@@ -8,14 +8,24 @@ import Faker from '../src/assets/js/libs/faker';
 const faker = new Faker();
 const app = express();
 
-app.use(express.static('public'));
-
-app.get('/', async (req, res) => {
+const servePages = async (req, res) => {
   const serverMount = await reactApp(req);
   res.render('index', {
     initialDocsState: serverMount.initialDocsState,
     initialDom: serverMount.initialDom
   });
+};
+
+app.use(express.static('public'));
+
+app.get('/', async (req, res) => {
+  servePages(req, res);
+});
+
+app.get('/component-library', async (req, res) => {
+  console.log(req.url);
+  res.redirect(302, '/');
+  //servePages(req, res);
 });
 
 app.get('/accounts', (req, res) => {

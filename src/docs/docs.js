@@ -1,13 +1,18 @@
 import React, {PureComponent} from 'react';
 import {Link} from 'react-router-dom';
+import DocsStore from '../api/docs/state/state';
 //import componentData from './componentData';
 
 class Docs extends PureComponent {
   constructor(props){
     super(props);
-    console.log(this.props);
-    this.store = this.props.location.state.store;
     
+    try {
+      this.store = this.props.location.state.store;
+    } catch (error) {
+      this.store = new DocsStore();
+    }
+    console.log('docs store:', this.store);
     this.state = this.store.getState();
     this.onStoreChange = this.onStoreChange.bind(this);
   }
@@ -17,7 +22,6 @@ class Docs extends PureComponent {
   }
 
   componentDidMount(){
-    console.log('made it');
     this.subscriptionId = this.store.subscribe(this.onStoreChange);
   }
 
